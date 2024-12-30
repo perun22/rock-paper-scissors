@@ -39,6 +39,10 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+    if (humanChoice === '') {
+        return alert(`Invalid input. Please enter rock, paper or scissors`)
+    }
+
     if (humanChoice === 'rock') {
         if (computerChoice === 'scissors') {
             humanScore++;
@@ -85,8 +89,10 @@ function playGame() {
 
     if (humanScore > computerScore) {
         console.log(`You won the game by ${humanScore} to ${computerScore}`);
-    } else {
+    } else if (humanScore < computerScore) {
         console.log(`Computer won by ${computerScore} to ${humanScore}`);
+    } else {
+        console.log("The game is a tie. Noone wins!")
     }
 }
 
