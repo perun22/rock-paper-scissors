@@ -65,15 +65,33 @@
     font-size: 3rem;
   }
 
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: center;
+  }
+
   p {
     font-family: "Lato", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .container {
     width: 50vw;
-    margin: 96px auto;
+    margin: 0 auto;
     text-align: center;
+    padding-top: 64px;
+  }
+
+  ol {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: "Lato", serif;
   }
