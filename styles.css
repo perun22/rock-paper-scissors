@@ -38,23 +38,10 @@
  
   body {
     height: 100vh;
-    background-image: linear-gradient(
-        45deg,
-        hsl(233deg 100% 50%) 0%,
-        hsl(257deg 96% 52%) 33%,
-        hsl(268deg 100% 48%) 45%,
-        hsl(275deg 100% 47%) 54%,
-        hsl(281deg 100% 46%) 61%,
-        hsl(286deg 100% 45%) 66%,
-        hsl(292deg 100% 44%) 71%,
-        hsl(297deg 100% 42%) 76%,
-        hsl(302deg 100% 43%) 80%,
-        hsl(306deg 100% 45%) 84%,
-        hsl(309deg 100% 47%) 88%,
-        hsl(312deg 100% 48%) 93%,
-        hsl(315deg 100% 50%) 100%
-    );
+    background-color: #543b3d;
     color: hsl(285, 40%, 98%);
+    display: flex;
+    justify-content: center;
   }
 
   h1 {
@@ -63,6 +50,8 @@
     font-weight: bold;
     font-style: normal;
     font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 32px;
   }
 
   h2 {
@@ -79,19 +68,96 @@
     font-family: "Lato", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .container {
-    width: 50vw;
-    margin: 0 auto;
+    min-width: 600px;
+    margin: 10rem auto;
+    padding: 2rem 0;
     text-align: center;
-    padding-top: 64px;
+    border-radius: 16px;
+    background-color: #4D1613;
+    box-shadow: 3px 3px 8px hsl(23, 84%, 7%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  ol {
+  ul {
     width: fit-content;
     margin: 0 auto;
     font-size: 1.2rem;
     font-family: "Lato", serif;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    font-family: "Lato", serif;
+    font-weight: bold;
+    margin-top: 32px;
+    border: none;
+    background-color: #734246;
+    color: #fbfcf8;
+    padding: 8px 32px;
+    border-radius: 50px;
+    width: 150px;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 3px 3px 8px hsl(3, 60%, 10%);
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: hsl(24, 100%, 65%);
+    color: hsl(240deg 100% 20%);
+  }
+
+  .results {
+    font-family: "Lato", serif;
+    font-size: 1.2rem;
+  }
+
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: false;
+  }
+  
+  .container {
+    animation: 2s gradient-angle infinite linear;
+    border: 2px solid transparent;
+    background-image: linear-gradient(hsl(355, 27%, 20%)),
+      conic-gradient(
+        from var(--gradient-angle),
+        hsl(3deg 60% 19%) 0%,
+        hsl(2deg 57% 20%) 8%,
+        hsl(2deg 55% 22%) 17%,
+        hsl(1deg 52% 23%) 25%,
+        hsl(0deg 49% 25%) 33%,
+        hsl(0deg 47% 26%) 42%,
+        hsl(359deg 44% 27%) 50%,
+        hsl(358deg 41% 29%) 58%,
+        hsl(358deg 38% 30%) 67%,
+        hsl(358deg 35% 31%) 75%,
+        hsl(357deg 33% 33%) 83%,
+        hsl(355deg 30% 34%) 92%,
+        hsl(355deg 27% 35%) 100%
+      );
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+  }
+  
+  @keyframes gradient-angle {
+    to {
+      --gradient-angle: 1turn;
+    }
   }
